@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.container{
+    width:100vw;
+    height:100vh;
+    background: rgb(18,108,106);
+background: linear-gradient(90deg, rgba(18,108,106,1) 0%, rgba(178,179,255,1) 100%);
+position: relative;
+}
+
+.header{
+    display:flex;
+    align-items: center;
+    height:20vh;
+    justify-content: space-around;
+}
+
+.table{
+    height:80vh;
+    display:flex;
+    position: relative;
+}
+
+.player1{
+    text-align: center;
+    width:50%;
+    height:100%;
+
+}
+.player2{
+    text-align: center;
+    width:50%;
+    height:100%;
+}
+
+.btn__play{
+    padding:1rem 3rem;
+    border-radius:12px;
+    border:none;
+    box-shadow: 8px 8px 24px 0px rgba(1, 2, 16, 1);
+    background: rgb(103,5,128);
+    background: linear-gradient(90deg, rgba(103,5,128,1) 0%, rgba(241,149,255,1) 100%);
+color:rgb(204, 204, 204);
+font-size: 16px;
+}
+
+.btn-1{
+    position: absolute;
+    bottom:20%;
+    left:30%;
+    transform: translate(-50%,-50%);
+}
+.btn-2{
+    position: absolute;
+    bottom:20%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.btn-3{
+    position: absolute;
+    bottom:20%;
+    left:70%;
+    transform: translate(-50%,-50%);
+}
+
+.img__block{
+    width:200px;
+    height:200px;
+}
+
+.display-n{
+    display: none;
+}
+
+.win__block{
+    background: rgb(136,162,207);
+    background: linear-gradient(90deg, rgba(136,162,207,1) 0%, rgba(0,245,255,1) 100%);
+    padding:1rem;
+    border-radius:8px;
+    position: absolute;
+    top:30%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
