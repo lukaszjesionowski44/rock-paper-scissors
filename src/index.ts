@@ -7,9 +7,16 @@ const player1Div = document.getElementById('player1') as HTMLInputElement;
 const player2Div = document.getElementById('player2') as HTMLInputElement;
 const imgBlock1 = document.getElementById('img__block-1') as HTMLInputElement;
 const imgBlock2 = document.getElementById('img__block-2') as HTMLInputElement;
-const winRoundMessage = document.getElementById('win__block-message') as HTMLInputElement;
+const winRoundMessage = document.getElementById('win__block') as HTMLInputElement;
 const player1Score = document.getElementById('player__1-score') as HTMLInputElement;
 const player2Score = document.getElementById('player__2-score') as HTMLInputElement;
+const winMessage = document.getElementById('win__message') as HTMLInputElement;
+const btn1 = document.getElementById('btn-1') as HTMLInputElement
+const btn2 = document.getElementById('btn-2') as HTMLInputElement
+const btn3 = document.getElementById('btn-3') as HTMLInputElement
+const btn4 = document.getElementById('btn-4') as HTMLInputElement
+const rules = document.getElementById('rules') as HTMLInputElement
+const overflow = document.getElementById('overflow') as HTMLInputElement
 
 
 function computerChoice(){
@@ -22,6 +29,7 @@ function computerChoice(){
 
 function rock(){
     player1 = 'rock'
+    winRoundMessage.classList.remove('display-n')
     imgBlock1?.classList.remove('display-n')
     imgBlock1?.setAttribute('src', './assets/0.png')
     computerChoice()
@@ -30,6 +38,7 @@ function rock(){
 
 function paper(){
     player1 = 'paper'
+    winRoundMessage.classList.remove('display-n')
     imgBlock1?.classList.remove('display-n')
     imgBlock1?.setAttribute('src', './assets/1.png')
     computerChoice()
@@ -38,10 +47,16 @@ function paper(){
 
 function scissors(){
     player1 = 'scissors'
+    winRoundMessage.classList.remove('display-n')
     imgBlock1?.classList.remove('display-n')
     imgBlock1?.setAttribute('src', './assets/2.png')
     computerChoice()
     checkWin()
+}
+
+function closeRules(){
+    rules.classList.add('display-n');
+    overflow.classList.add('display-n')
 }
 
 function checkWin(){
@@ -93,4 +108,38 @@ function checkWin(){
         player2Score.innerHTML = score[1].toString()
         console.log('computer scored')
     }
+    if(score[0] === 3){
+       disableButtons()
+       btn4.classList.remove('display-n')
+        winRoundMessage.classList.add('display-n')
+        winMessage.classList.remove('display-n')
+        winMessage.innerHTML = 'Player 1 Won!'
+    }
+    if(score[1] === 3){
+        disableButtons()
+        btn4.classList.remove('display-n')
+        winRoundMessage.classList.add('display-n')
+        winMessage.classList.remove('display-n')
+        winMessage.innerHTML = 'Computer Won!'
+    }
 }
+
+function disableButtons(){
+    btn1.classList.add('display-n')
+    btn2.classList.add('display-n')
+    btn3.classList.add('display-n')
+}
+
+function playAgain(){
+    btn1.classList.remove('display-n')
+    btn2.classList.remove('display-n')
+    btn3.classList.remove('display-n')
+    winMessage.classList.add('display-n')
+    btn4.classList.add('display-n')
+    score = [0, 0]
+    player1Score.innerHTML = score[0].toString()
+    player2Score.innerHTML = score[1].toString()
+    imgBlock1?.classList.add('display-n')
+    imgBlock2?.classList.add('display-n')
+}
+

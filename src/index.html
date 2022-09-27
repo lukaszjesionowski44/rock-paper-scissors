@@ -5,15 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="../dist/index.js"></script>
+  <script src="https://kit.fontawesome.com/b75de89153.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <title>Rock Paper Scissors</title>
-</head>
+</head> 
 <body>
     <div class="container">
+        <div class="overflow" id="overflow">
+            <img src="./assets/x-solid.svg" alt='x' class="rules-x" id="rules-x" onclick="closeRules()"/>
+            <div class="rules" id="rules">
+                <h1>
+                    Rules
+                </h1>
+                <p>
+                    The rock is a closed fist, paper is a flat hand with fingers and thumb extended and the palm facing downward and scissors is a fist with the index and middle fingers fully extended toward the opposing player. Rock wins against scissors, paper wins against rock, and scissors wins against paper.
+                </p>
+               <button class="btn__understand" onclick="closeRules()">I understand</button>
+            </div>
+        </div>
+       
         <div class="header">
             <h1>Player 1 Score: <span id="player__1-score">0</span></h1>
             <h1>Computer Score: <span id="player__2-score">0</span></h1>
         </div>
+        <p id="win__message" class="winning__message display-n">Player 1 Won!</p>
         <div class="table">
             <div class="player1" id="player1">
                 <img src="./assets/0.png" alt="rock" class='img__block display-n' id='img__block-1'/>
@@ -21,12 +36,13 @@
             <div class="player2" id="player2">
                 <img src="./assets/0.png" alt="rock" class='img__block  display-n' id='img__block-2'/>
             </div>
-            <div class="win__block">
+            <div class="win__block display-n" id="win__block">
                 <h2 id="win__block-message">Player 1 Scored!</h2>
             </div>
-            <button class="btn__play btn-1" onclick="rock()">Rock</button>
-            <button class="btn__play btn-2" onclick="paper()">Paper</button>
-            <button class="btn__play btn-3" onclick="scissors()">Scissors</button>
+            <button class="btn__play btn-1" id="btn-1" onclick="rock()">Rock</button>
+            <button class="btn__play btn-2" id="btn-2" onclick="paper()">Paper</button>
+            <button class="btn__play btn-3" id="btn-3" onclick="scissors()">Scissors</button>
+            <button class="btn__play btn__play-again display-n" id="btn-4" onclick="playAgain()">Play Again</button>
         </div>
        
     </div>
